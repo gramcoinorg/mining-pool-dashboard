@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-echo Downloading Gram Mining Pool CLI...
-wget https://github.com/gramcoinorg/mining-pool/releases/download/miners-r1/gram-mining-pool-ubuntu-x86-64.tar.gz > /dev/null 2>&1
+echo Downloading lolMiner v1.84...
+wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.84/lolMiner_v1.84_Lin64.tar.gz > /dev/null 2>&1
 
 echo Unpacking...
-tar -xvzf gram-mining-pool-ubuntu-x86-64.tar.gz > /dev/null 2>&1
+tar xvfz lolMiner_v1.84_Lin64.tar.gz > /dev/null 2>&1
 
-echo Settings permissions...
-chmod +x gram-mining-pool
+echo Rename lolMiner directory...
+mv 1.84 lolMiner-1.84
 
 echo Cleaning up...
-rm gram-mining-pool-ubuntu-x86-64.tar.gz
+rm lolMiner_v1.84_Lin64.tar.gz
 
-echo -e "Done.\n\n\nUse your personal command to run CLI or run \"./gram-mining-pool --help\" to display information about parameters."
+echo Miner directory: $(pwd)/lolMiner-1.84
+
+echo "Done.\n\n\nUse your personal command (from the site) to run the miner."
